@@ -84,7 +84,7 @@ if [[ "$organs" != "y" && "$organs" != "n" ]]; then
     exit 1
 fi
 
-# Validate number input (must be a strictly positive integer: 1, 2, 3, ...)
+# Validate number input (must be a strictly positive integer)
 if ! [[ "$number" =~ ^[1-9][0-9]*$ ]]; then
     echo "Error: --number must be a strictly positive integer"
     exit 1

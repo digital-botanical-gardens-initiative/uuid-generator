@@ -21,7 +21,7 @@ EOF
 run_script() {
     script_name=$1
     # Redirect all output to the log file
-    $POETRY_PATH run python3 "${scripts_folder}${script_name}.py"
+    poetry run python3 "${scripts_folder}${script_name}.py"
     if [ $? -ne 0 ]; then
         echo "$script_name failed"
         exit 1
@@ -72,14 +72,27 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# Validate inputs
+# Validate uuid input
 if [[ "$uuid" != "y" && "$uuid" != "n" ]]; then
     echo "Error: --uuid must be 'y' or 'n'"
     exit 1
 fi
 
+# Validate organs input
 if [[ "$organs" != "y" && "$organs" != "n" ]]; then
     echo "Error: --organs must be 'y' or 'n'"
+    exit 1
+fi
+
+# Validate number input (must be a strictly positive integer: 1, 2, 3, ...)
+if ! [[ "$number" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Error: --number must be a strictly positive integer"
+    exit 1
+fi
+
+# Validate path input (must exist and be a directory)
+if [[ ! -d "$path" ]]; then
+    echo "Error: --path '$path' does not exist or is not a directory"
     exit 1
 fi
 

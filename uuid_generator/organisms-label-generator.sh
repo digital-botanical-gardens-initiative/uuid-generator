@@ -19,9 +19,12 @@ EOF
 
 # Run a script and check its return code
 run_script() {
-    script_name=$1
-    # Redirect all output to the log file
-    poetry run python3 "${scripts_folder}${script_name}.py"
+    script=$1.py
+    number=$2
+    path=$3
+
+    poetry run python3 $script $number $path
+
     if [ $? -ne 0 ]; then
         echo "$script_name failed"
         exit 1
@@ -37,8 +40,8 @@ fi
 # Default values
 uuid="y"
 organs="y"
-number=10
-path="./"
+number=15
+path="../output"
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
@@ -98,15 +101,15 @@ fi
 
 # Manage different cases
 if [[ "$uuid" == "y" && "$organs" == "y" ]]; then
-    run_script "full_label"
+    run_script full_label $number $path
 fi
 
 if [[ "$uuid" == "y" && "$organs" == "n" ]]; then
-    run_script "uuid_label"
+    run_script uuid_label $number $path
 fi
 
 if [[ "$uuid" == "n" && "$organs" == "y" ]]; then
-    run_script "organs_label"
+    run_script organs_label $number $path
 fi
 
 if [[ "$uuid" == "n" && "$organs" == "n" ]]; then

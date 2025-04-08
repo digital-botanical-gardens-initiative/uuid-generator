@@ -22,8 +22,10 @@ run_script() {
     script=$1.py
     number=$2
     path=$3
+    uuid=$4
+    organs=$5
 
-    poetry run python3 $script $number $path
+    poetry run python3 $script $number $path $uuid $organs
 
     if [ $? -ne 0 ]; then
         echo "$script_name failed"
@@ -101,7 +103,7 @@ fi
 
 # Launch script
 if [[ "$uuid" == "y" || "$organs" == "y" ]]; then
-    run_script full_label $number $path $uuid $organs
+    run_script label_generator $number $path $uuid $organs
 fi
 
 # If both options are 'n', show an error message

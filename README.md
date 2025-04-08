@@ -1,41 +1,9 @@
 # uuid-generator
 
-[![Release](https://img.shields.io/github/v/release/digital-botanical-gardens-initiative/uuid-generator)](https://img.shields.io/github/v/release/digital-botanical-gardens-initiative/uuid-generator)
 [![Build status](https://img.shields.io/github/actions/workflow/status/digital-botanical-gardens-initiative/uuid-generator/main.yml?branch=main)](https://github.com/digital-botanical-gardens-initiative/uuid-generator/actions/workflows/main.yml?query=branch%3Amain)
-[![codecov](https://codecov.io/gh/digital-botanical-gardens-initiative/uuid-generator/branch/main/graph/badge.svg)](https://codecov.io/gh/digital-botanical-gardens-initiative/uuid-generator)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/digital-botanical-gardens-initiative/uuid-generator)](https://img.shields.io/github/commit-activity/m/digital-botanical-gardens-initiative/uuid-generator)
-[![License](https://img.shields.io/github/license/digital-botanical-gardens-initiative/uuid-generator)](https://img.shields.io/github/license/digital-botanical-gardens-initiative/uuid-generator)
+[![License: MIT](https://img.shields.io/github/license/digital-botanical-gardens-initiative/uuid-generator)](https://img.shields.io/github/license/digital-botanical-gardens-initiative/uuid-generator)
 
-A script to create uuids
+A script to create organisms labels for the EMI project
 
 - **Github repository**: <https://github.com/digital-botanical-gardens-initiative/uuid-generator/>
-- **Documentation** <https://digital-botanical-gardens-initiative.github.io/uuid-generator/>
-
-## Getting started with your project
-
-First, create a repository on GitHub with the same name as this project, and then run the following commands:
-
-```bash
-git init -b main
-git add .
-git commit -m "init commit"
-git remote add origin git@github.com:digital-botanical-gardens-initiative/uuid-generator.git
-git push -u origin main
-```
-
-Finally, install the environment and the pre-commit hooks with
-
-```bash
-make install
-```
-
-You are now ready to start development on your project!
-The CI/CD pipeline will be triggered when you open a pull request, merge to main, or when you create a new release.
-
-To finalize the set-up for publishing to PyPI or Artifactory, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/publishing/#set-up-for-pypi).
-For activating the automatic documentation with MkDocs, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/mkdocs/#enabling-the-documentation-on-github).
-To enable the code coverage reports, see [here](https://fpgmaas.github.io/cookiecutter-poetry/features/codecov/).
-
----
-
-Repository initiated with [fpgmaas/cookiecutter-poetry](https://github.com/fpgmaas/cookiecutter-poetry).

@@ -99,19 +99,12 @@ if [[ ! -d "$path" ]]; then
     exit 1
 fi
 
-# Manage different cases
-if [[ "$uuid" == "y" && "$organs" == "y" ]]; then
-    run_script full_label $number $path
+# Launch script
+if [[ "$uuid" == "y" || "$organs" == "y" ]]; then
+    run_script full_label $number $path $uuid $organs
 fi
 
-if [[ "$uuid" == "y" && "$organs" == "n" ]]; then
-    run_script uuid_label $number $path
-fi
-
-if [[ "$uuid" == "n" && "$organs" == "y" ]]; then
-    run_script organs_label $number $path
-fi
-
+# If both options are 'n', show an error message
 if [[ "$uuid" == "n" && "$organs" == "n" ]]; then
     echo "You need to select at least one option."
     exit 1

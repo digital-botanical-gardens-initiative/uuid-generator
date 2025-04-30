@@ -3,7 +3,7 @@
 # Help function
 show_help() {
     cat << EOF
-Usage: $(basename "$0") [--uuid y|n] [--organs y|n]
+Usage: $(basename "$0") [--uuid y|n] [--organs y|n] [--number <num>] [--path <path>]
 
 Options:
   --uuid y|n       Add a UUID qr code on the label (default: 'y')
@@ -13,7 +13,7 @@ Options:
   -h, --help       Show help
 
 Example to generate a label with a UUID and no organs checkboxes:
-  ./$(basename "$0") --uuid y --organs n
+  ./$(basename "$0") --uuid y --organs n --number 5 --path /path/to/output/dir
 EOF
 }
 
